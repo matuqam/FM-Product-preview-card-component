@@ -1,0 +1,129 @@
+/* 
+##################
+# Take aways #####
+##################
+
+* hsl color format (easy to make a darker/lighter version of a color)
+* border radius on div with no padding needs overflow hidden to work if it contains other divs with no margin
+* center a div horizontally with margin auto
+* text-transform: uppercase;
+* text-decoration: line-through;
+* letter-spacing: 4px;
+* @media only screen and (min-width: 800px) {...}
+
+*/
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(30, 38%, 92%);
+    color: hsl(228, 2%, 54%);
+    font-family: Montserrat;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+}
+
+h1 {
+    color: hsl(212, 21%, 14%);
+    font-family: Fraunces;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 40px;
+    margin: 16px 0 8px 0;
+}
+
+img {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden; /* this is required for the border-radius effect to work */
+    width: 400px;
+    height: 900px;
+    padding: 0;
+    margin: auto;
+}
+
+.productImage {
+    background: url("../images/image-product-desktop.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 4000px;
+    padding: 0;
+    margin: 0;
+}
+
+
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 32px;
+}
+
+.productName {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.price {
+    display: flex;
+    line-height: 60px;
+    justify-content: flex-start;
+}
+
+.netPrice {
+    color: hsl(158, 36%, 37%);
+    font-family: Fraunces;
+    font-size: 40px;
+    font-weight: 700;
+    margin-right: 16px;
+}
+
+.basePrice {
+    text-decoration: line-through;
+}
+
+.button {
+    background-color: hsl(158, 36%, 37%);
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 16px 64px;
+}
+
+.button:active{
+    background-color: hsl(158, 36%, 26%);
+}
+
+@media only screen and (min-width: 800px) {
+    .card {
+        width: 666px;
+        height: 500px;
+        flex-direction: row;
+    }
+
+    .productImage {
+        background-size: contain;
+        background-position: top;
+        width: 50%;
+    }
+
+    .description {
+        width: 50%;
+        padding: 64px 32px;
+    }
+
+}
